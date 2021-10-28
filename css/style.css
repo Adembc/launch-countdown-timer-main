@@ -1,0 +1,117 @@
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --dark-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --black: hsl(234, 17%, 12%);
+}
+body{
+    font-size: 14px;
+    font-family:  'Red Hat Text', sans-serif;;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height: 100vh;
+    background-image: url("../images/pattern-hills.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% 25%;
+    background-color: var(--very-dark-blue);
+    padding: 130px 0 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.container::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/bg-stars.svg");
+    background-size: 100% 70%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+ .container h1{
+    /* margin: 0 auto 50px; */
+    /* width: fit-content; */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 40px;
+    color: var(--white);
+    position: relative;
+}
+.container .clock{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+}
+.container div .number{
+    background-color: var(--dark-blue);
+    color: var(--soft-red);
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 100px;
+    margin: 0 20px 30px ; 
+    box-shadow: 0 10px 5px 6px var(--black); 
+    width: 162px;
+    text-align: center;
+}
+.container div .number + span{
+    display: block;
+    text-align: center;
+    color: var(--grayish-blue);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+@media(max-width:991px){
+    .container div .number{
+        font-size: 70px;
+        width: 121px;
+    }  
+}
+@media(max-width : 767px){
+    .container h1{
+        font-size: 26px;
+        line-height: 1.8;
+        text-align: center;
+        padding: 0 7px;
+    }
+    .container div .number{
+        font-size: 30px;
+        margin: 0 10px 30px;
+        letter-spacing: 1px;
+        width: 70px;
+    } 
+    .container div .number + span{
+        letter-spacing: 0;
+    }  
+}
+.container .links{
+    list-style: none;
+    display: flex;
+    position: relative;
+}
+.container .links li img{
+    max-width: 100%;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: background-color .3s;
+}
+.container .links li img:hover{
+    background-color: var(--soft-red);
+}
